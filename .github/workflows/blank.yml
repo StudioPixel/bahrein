@@ -7,8 +7,12 @@ on: [deployment]
 
 jobs:
   build:
-    if: github.event.deployment.environment == 'testing'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: ./.github/actions/echo
+      - name: To Production
+        if: github.event.deployment.environment == 'production'
+        run: echo ${{ github.event.deployment.ref }} on PRODUCTION
+      - name: To Testing
+        if: github.event.deployment.environment == 'testing'
+        run: echo ${{ github.event.deployment.ref }}
