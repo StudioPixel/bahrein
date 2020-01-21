@@ -2,6 +2,7 @@ name: CI
 
 on:
   deployment:
+    environment: testing
 
 jobs:
   build:
