@@ -1,4 +1,5 @@
 name: Echo
-steps:
-- name: Run a one-line script
-  run: echo github.event.deployment.environment
+run:
+  steps:
+  - name: Run a one-line script
+    run: echo github.event.deployment.environment
