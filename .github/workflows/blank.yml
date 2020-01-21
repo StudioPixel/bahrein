@@ -2,6 +2,7 @@ name: CI
 
 on:
   deployment:
+    target: testing
 
 jobs:
   build:
@@ -11,4 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: cat ${{ github.event.deployment.ref }}
+      run: ${{ github.event.deployment }} > dump
+    - name: Cat
+      run: cat dump
