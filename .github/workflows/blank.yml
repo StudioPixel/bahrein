@@ -1,17 +1,17 @@
 name: CI
 
-on:
-  deployment:
-    target: testing
+env:
+  test: 1
+
+on: [deployment]
 
 jobs:
   build:
+    if: github.event.deployment.environment == 'testing'
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: ${{ github.event.deployment }} > dump
-    - name: Cat
-      run: cat dump
+      run: echo github.event.deployment.environment
