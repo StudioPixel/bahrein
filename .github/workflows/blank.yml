@@ -10,4 +10,5 @@ jobs:
     if: github.event.deployment.environment == 'testing'
     runs-on: ubuntu-latest
     steps:
-    - uses: ./.github/actions/echo
+      - uses: actions/checkout@v1
+      - uses: ./.github/actions/echo
