@@ -10,4 +10,4 @@ jobs:
     if: github.event.deployment.environment == 'testing'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/echo
+    - uses: ./.github/actions/echo
