@@ -1,0 +1,9 @@
+# View examples and documentation at https://deliverybot.dev/docs/
+testing:
+  environment: testing
+  production_environment: false
+
+production:
+  environment: production
+  production_environment: true
+
